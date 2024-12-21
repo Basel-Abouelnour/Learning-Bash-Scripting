@@ -1,0 +1,46 @@
+###############################################################################################################################
+###############################################################################################################################
+					Understanding Standard Input, Output, and Error
+###############################################################################################################################
+###############################################################################################################################
+
+stdin (0) - standard input: "typically comes from the keyboard."
+
+stdout(1) - Standard ouput: "Typically goes to the terminal screen."
+
+stderr(2) - Standard error: "Typically goes to the terminal screen."
+
+			<---------------------------------------------------------------------------->
+
+
+output redirection can be used to store output in a file using the arrow key " > " , will replace the content of the file if there is any 
+		echo "This message goes to a file" > file.txt
+
+
+output can be appended to files using two arrows ">>" and will be added to the content of the file
+		echo "This message is appended to file" >> file.txt
+
+
+errors can be redirected to files using "2>"
+		ls non_existing_file 2> error.log
+
+
+we can use "&>" to redirect both outputs or errors of a command 
+		command &> output_and_error.log
+
+
+pipes can be used to use an output of a first command as an input to a second command
+		ls -l | grep ".sh"
+		# this command will use the first output to filter the output and return only files including .sh
+
+		cat file.txt | tr 'a-z' 'A-Z' | sort
+		# reading content of file.txt --> then transform lowercase letters to uppercase --> then sort it alphapetically
+
+
+we can save the input of a user and store it in a variable using "read" command
+
+			<---------------------------------------------------------------------------->
+
+###############################################################################################################################
+###############################################################################################################################
+

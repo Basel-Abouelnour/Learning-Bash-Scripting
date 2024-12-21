@@ -1,0 +1,70 @@
+######################################################################################################################################
+######################################################################################################################################
+						Best Practices For Bash Scripting
+######################################################################################################################################
+######################################################################################################################################
+Section 1: Writing Portable Scripts
+	Use of Standarized Tools and commands
+		-Rely on POSIX-compliant commands
+		-Avoid system-specific tools whenever possible.
+	
+	Sheband for portability
+		-use the /bin/sh sheband for maximum portability
+		-Avoid using /bin/bash unless you specificallyy need Bash features.
+
+		example: 
+			# Bash-Specific array
+			arr=(1 2 3)
+			
+			# Portable alternative using loops
+			set -- 1 2 3
+			for i in "$@" ; do 
+				echo "$i"
+			done
+
+Section 2: Naming Conventions and Script Structure
+	Variable Naming Conventions
+		-User Lowercase with underscores for variable names.
+		-Avoid single-letter variables unless in loops.
+		
+	Function Naming Convensions
+		-User verbs or actions to name funcions, reflecting what the function dues.
+		-User underscores or camelCase depending on your team's style guide.
+
+	Script Structure
+		-Organize your script into logical sections
+
+		example:
+			#!/bin/sh
+			# Variables
+			file_name="name.txt"
+			
+			# Functions
+			Process_file(){
+				# Function Logic	
+			}
+			
+			# Main Scripts
+			Process_file "$file_name"
+
+			# Cleanup
+			echo "Script Completed."
+
+Section 3: Commenting and Documentation
+	Best Practicers for commenting
+		-Use comments to explain the purpose of the script, the logic behind complex sections, and any non-obvious code.
+		-Avoid over-commenting obvious code.
+
+section 4: Optimizing Performance and Efficiency
+	Avoiding Useless use of cat (UUoC)
+		-A common inefficiency is using cat when it's not needed.
+		-Instead ofo piping cat to another command, pass the file directly.
+		-Subshells add overhead. Whenever possible, avoid using them unnecessarily, especially in loops.
+
+	Profile and Benchmark Your Script
+		-Use the <time> commandor tools like <shellcheck> to identify-
+		  bottlenecks in your script and make informed optimizations.
+
+
+######################################################################################################################################
+######################################################################################################################################

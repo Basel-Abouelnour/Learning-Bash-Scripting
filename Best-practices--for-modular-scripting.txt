@@ -1,0 +1,27 @@
+###############################################################################################################################
+###############################################################################################################################	
+					#Best Practices For modular Scripting
+###############################################################################################################################
+###############################################################################################################################
+
+1- Modular scripting means breaking down your code into reusable functions and modules "like microservices for application"
+
+2- Each function should perform one specific task
+	calculate_sum(){
+		local sum=$(( $1 + $2 ))
+		echo $sum
+	}
+	
+	echo_message(){
+		echo "Calculation Complete.
+	}
+
+3- Always use clear, descriptive names for your fucntions and variables.
+
+4- Try to minimize the use of global variables.
+   use local variables within functions to avoid uninteded side effects.
+
+5- Even with descriptive names, comments are essential.
+
+###############################################################################################################################
+###############################################################################################################################
